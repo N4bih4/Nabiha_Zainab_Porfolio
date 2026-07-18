@@ -36,10 +36,15 @@ export const Resume = () => {
             <h3 className="text-2xl font-bold text-white mb-2 relative z-10">Nabiha Zainab</h3>
             <p className="text-slate-400 mb-8 relative z-10">Software Engineering Undergraduate</p>
             
-            <div className="flex gap-4 relative z-10">
+            <div className="flex flex-col items-center gap-4 relative z-10">
               <Button size="lg" variant="primary" href="/resume.pdf" download="Nabiha_Zainab_Resume.pdf">
                 <FaDownload className="mr-2" /> Download Resume
               </Button>
+              <p className="mt-2 text-slate-300 text-center">
+                <a href="#experience" className="text-blue-400 hover:underline">
+                  View my professional experience and projects below.
+                </a>
+              </p>
             </div>
           </motion.div>
         </div>

@@ -53,6 +53,14 @@ export const Experience = () => {
                   <h5 className="font-bold text-white text-lg">Hostel Roommate Matching System</h5>
                   <p className="text-sm text-slate-400 mt-1">Status: <span className="text-cyan-400 font-medium">Currently Developing</span></p>
                 </div>
+                <div className="p-4 bg-slate-900/50 rounded-xl border border-slate-700/50">
+                  <h5 className="font-bold text-white text-lg">OS Simulation System</h5>
+                  <p className="text-sm text-slate-400 mt-1">Status: <span className="text-cyan-400 font-medium">Completed</span></p>
+                </div>
+                <div className="p-4 bg-slate-900/50 rounded-xl border border-slate-700/50">
+                  <h5 className="font-bold text-white text-lg">Clothing Management System</h5>
+                  <p className="text-sm text-slate-400 mt-1">Status: <span className="text-cyan-400 font-medium">Completed</span></p>
+                </div>
               </div>
             </motion.div>
           </div>

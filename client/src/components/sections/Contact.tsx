@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react';
+import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { FaEnvelope, FaPhone, FaMapMarkerAlt, FaLinkedin, FaGithub } from 'react-icons/fa';
 import { Button } from '../ui/Button';
@@ -9,7 +9,6 @@ const TEMPLATE_ID = 'template_cy3akb2';
 const PUBLIC_KEY = 'XOtqdHvR-DULloVvg';
 
 export const Contact = () => {
-  const formRef = useRef<HTMLFormElement>(null);
   const [formData, setFormData] = useState({ name: '', email: '', subject: '', message: '' });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [status, setStatus] = useState<{type: 'success' | 'error', message: string} | null>(null);
