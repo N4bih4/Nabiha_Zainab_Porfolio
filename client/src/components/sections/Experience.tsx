@@ -80,7 +80,7 @@ export const Experience = () => {
                   <h4 className="text-lg text-purple-400 font-medium">Self-Employed</h4>
                 </div>
                 <div className="mt-2 md:mt-0 px-4 py-1 bg-slate-900/80 border border-slate-700 rounded-full text-sm text-slate-300 whitespace-nowrap">
-                  Present
+                  March 2026 – June 2026
                 </div>
               </div>
               
