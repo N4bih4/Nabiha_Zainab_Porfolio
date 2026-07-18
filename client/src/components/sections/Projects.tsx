@@ -1,6 +1,4 @@
 import { motion } from 'framer-motion';
-import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
-import { Button } from '../ui/Button';
 
 const defaultProjects = [
     {
