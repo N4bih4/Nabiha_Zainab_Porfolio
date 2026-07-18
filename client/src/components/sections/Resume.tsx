@@ -37,7 +37,7 @@ export const Resume = () => {
             <p className="text-slate-400 mb-8 relative z-10">Software Engineering Undergraduate</p>
             
             <div className="flex flex-col items-center gap-4 relative z-10">
-              <Button size="lg" variant="primary" href="/resume.pdf" download="Nabiha_Zainab_Resume.pdf">
+              <Button size="lg" variant="primary" href="/resume.pdf?v=2" download="Nabiha_Zainab_Resume.pdf">
                 <FaDownload className="mr-2" /> Download Resume
               </Button>
               <p className="mt-2 text-slate-300 text-center">
