@@ -1,9 +1,15 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { FaEnvelope, FaPhone, FaMapMarkerAlt, FaLinkedin, FaGithub } from 'react-icons/fa';
 import { Button } from '../ui/Button';
+import emailjs from '@emailjs/browser';
+
+const SERVICE_ID = 'service_tyqachz';
+const TEMPLATE_ID = 'template_cy3akb2';
+const PUBLIC_KEY = 'XOtqdHvR-DULloVvg';
 
 export const Contact = () => {
+  const formRef = useRef<HTMLFormElement>(null);
   const [formData, setFormData] = useState({ name: '', email: '', subject: '', message: '' });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [status, setStatus] = useState<{type: 'success' | 'error', message: string} | null>(null);
@@ -18,21 +24,21 @@ export const Contact = () => {
     setStatus(null);
     
     try {
-      const res = await fetch('http://localhost:5000/api/contact', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData)
-      });
-      
-      const data = await res.json();
-      if (data.success) {
-        setStatus({ type: 'success', message: 'Message sent successfully!' });
-        setFormData({ name: '', email: '', subject: '', message: '' });
-      } else {
-        setStatus({ type: 'error', message: 'Failed to send message. Please try again.' });
-      }
+      await emailjs.send(
+        SERVICE_ID,
+        TEMPLATE_ID,
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          subject: formData.subject,
+          message: formData.message,
+        },
+        PUBLIC_KEY
+      );
+      setStatus({ type: 'success', message: 'Message sent successfully! I will get back to you soon.' });
+      setFormData({ name: '', email: '', subject: '', message: '' });
     } catch (err) {
-      setStatus({ type: 'error', message: 'Network error. Please try again later.' });
+      setStatus({ type: 'error', message: 'Failed to send message. Please try again.' });
     } finally {
       setIsSubmitting(false);
     }
